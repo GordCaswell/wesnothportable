@@ -1,3 +1,65 @@
+Version 1.12.5:
+ * Campaigns:
+   * Eastern Invasion:
+     * Fixed scenario events not working right on easy difficulty in 'Captured'.
+   * Legend of Wesmere
+     * Fixed carryover bugs in scenarios 5-12.
+       (units missing from carryover, units appearing twice on map...)
+ * Editor:
+   * Add Recent Files menu with a list of recently saved or loaded maps or
+     scenarios, up to a custom limit (by default 10) that can be set in
+     Advanced Preferences.
+   * Fixed Player Start labels not being updated with repeat map generations
+     (bug #20036)
+ * Language and i18n:
+   * Updated translations: British English, French, Hungarian, Japanese,
+     Latvian, Polish, Portuguese, Scottish Gaelic, Spanish
+   * Fixed crashes during start-up on Windows resulting from add-ons containing
+     erroneous textdomain declarations (bug #23839).
+ * Multiplayer:
+   * Era names no longer support formatting markup in the game setup screen.
+   * Made MP lobby filter option filter on eras and mods too (bug #22987).
+   * Fix scenario ending to early for players that are defeated if there are
+     still players fighting and victory_when_enemies_defeated=no.
+   * Fix 'enemies defeated' event causing OOS error in mp scenarios.
+ * Terrains:
+   * Removed unit elevation from N-S hanging bridges
+   * Added unit elevation to NW-SE and SW-NE stone chasm bridges
+   * Added unit elevation to NW-SE and SW-NE plank bridges
+   * Hanging, stone chasm, and plank bridges are now displayed in-game simply
+     as "Bridge", retaining their descriptive names in the editor as per
+     convention.
+   * Fixed spurious "could not open image 'terrain/.png'" error messages caused
+     by terrains without a minimap image (symbol_image) such as those from the
+     Special category in the editor (Impassable Overlay, etc.).
+ * User interface:
+   * Force uniform font rendering settings across X11 and Apple OS X, avoiding
+     color glitches resulting from incorrect applications of subpixel hinting
+     (bug #20337).
+ * WML engine:
+   * Added WML menu item and event handler views to the Gamestate Inspector
+     dialog.
+   * Removed y offset by -1 from [message]'s scroll-to-unit logic.
+ * Miscellaneous and bug fixes:
+   * Default to non-strict compilation with CMake.
+   * Fixed strict compilation with clang 3.5 and 3.6.
+   * Fixed strict compilation with gcc 5.
+   * Fixed unbound memory read in internal time formatting code with
+     specially-crafted input.
+   * Fixed RECRUIT_UNIT_VARIATIONS core WML macro leaking an internal temporary
+     variable ($recruited_unit_random_variation).
+   * Fixed unit [resistance] and [jamming_costs] not being considered for sync
+     check.
+   * Fixed OOS on random maps, where clients placed sides in different castles.
+   * Several fixes to the handling of key combinations including
+     non-alphanumeric keys (Enter, Tab, F1-F12, etc.), especially relevant for
+     assigning custom hotkeys to actions in Preferences.
+   * Fixed broken Oasis terrain help entry (bug #23023)
+   * Fixed hang when attempting to make a screenshot from a non-existent map via
+     command-line (bug #20900)
+   * Fixed cases of wrong unit type used in planning moves (bug #20299)
+   * Avoid crash when planning moves on planned recruits (bug #18637)
+
 Version 1.12.4:
  * Security fixes:
    * Disallowed WML inclusion of .pbl files with a non-lowercase extension too

@@ -2,6 +2,32 @@ This is meant to be a concise list of player-visible changes (very minor
 changes may be omitted). For a complete list of changes, see the main
 changelog: https://github.com/wesnoth/wesnoth/blob/1.12/changelog
 
+Version 1.12.5:
+ * Campaigns:
+   * Eastern Invasion:
+     * Fixed scenario events not working right on easy difficulty in 'Captured'.
+   * Legend of Wesmere
+     * Fixed carryover bugs in scenarios 5-12.
+       (units missing from carryover, units appearing twice on map...)
+
+ * Language and i18n:
+   * Updated translations: British English, French, Hungarian, Japanese,
+     Latvian, Polish, Portuguese, Scottish Gaelic, Spanish.
+   * Fixed crashes during start-up on Windows resulting from add-ons containing
+     erroneous textdomain declarations (bug #23839).
+
+ * User interface:
+   * Force uniform font rendering settings across X11 and Apple OS X, avoiding
+     color glitches resulting from incorrect applications of subpixel hinting
+     (bug #20337).
+
+ * Miscellaneous and bug fixes:
+   * Fixed OOS on random maps, where clients placed sides in different castles.
+   * Fixed broken Oasis terrain help entry (bug #23023)
+   * Fixed cases of wrong unit type used in planning moves (bug #20299)
+   * Avoid crash when planning moves on planned recruits (bug #18637)
+
+
 Version 1.12.4:
  * Security fixes:
    * Disallowed WML inclusion of .pbl files with a non-lowercase extension too
